@@ -42,9 +42,12 @@ export default function TopicLists() {
   if (topics.length === 0) return <p>No topic found</p>
 
   return (
-    <div>
+    <>
       {topics.map((topic: Topic) => (
-        <div className="p-4 border border-slate-300 my-3 flex justify-between items-start gap-5">
+        <div
+          key={topic._id}
+          className="p-4 border border-slate-300 my-3 flex justify-between items-start gap-5"
+        >
           <div>
             <h2 className="text-2xl font-bold">{topic.title}</h2>
             <div>{topic.description}</div>
@@ -57,6 +60,6 @@ export default function TopicLists() {
           </div>
         </div>
       ))}
-    </div>
+    </>
   )
 }

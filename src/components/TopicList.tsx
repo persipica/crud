@@ -51,10 +51,14 @@ export default function TopicLists() {
           <div>
             <h2 className="text-2xl font-bold">{topic.title}</h2>
             <div>{topic.description}</div>
+            <div className="flex gap-4">
+              <p>Created: {topic.createdAt}</p>
+              <p>Updated:{topic.updatedAt}</p>
+            </div>
           </div>
           <div className="flex gap-2">
             <RemoveBtn />
-            <Link href={'/editTopic/123'}>
+            <Link href={`/editTopic/${topic._id}`}>
               <HiPencilAlt size={24} />
             </Link>
           </div>

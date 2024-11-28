@@ -28,6 +28,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
               return true
             }
           }
+          const res1 = await fetch(`${apiUrl}/api/log`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email }),
+          })
+          if (res1.ok) {
+            return true
+          }
         } catch (error) {
           console.log(error)
           return false
